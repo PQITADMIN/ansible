@@ -1,0 +1,35 @@
+- name: Update Ubuntu systems to 22.04 and ensure Docker & OpenJDK 17 are present
+  hosts:
+    - AppContainer
+    - AppServer
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: Update package cache
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600  # Optional: avoid unnecessary cache updates
+
+    - name: Upgrade all packages
+      ansible.builtin.apt:
+        upgrade: dist
+        force_apt_get: yes
+
+    - name: Ensure OpenJDK 17 JDK and JRE are installed
+      ansible.builtin.apt:
+        name:
+          - openjdk-17-jdk
+          - openjdk-17-jre
+        state: latest
+
+    - name: Ensure Docker is installed
+      ansible.builtin.apt:
+        name: docker.io
+        state: latest
+
+    - name: Ensure Docker service is running and enabled
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: yes

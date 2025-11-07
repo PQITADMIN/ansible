@@ -1,0 +1,16 @@
+ansible_user: root
+ansible_become: false
+ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+
+host_passwords:
+  "10.0.1.34": "Qv4!Xg%Np2KZmr"
+  "10.0.1.35": "yH7^LpT!GwX3nz"
+  "10.0.1.36": "Xz5*VqN#PkR9mw"
+  "10.0.1.37": "Lf8$TnGy^WpXz4"
+  "10.0.1.38": "Wn3#KzLp!XvFq8"
+  "10.0.1.39": "qR9*ZmV!TpX2Wc"
+  "10.0.1.40": "Bm6!YpN#LrKv7q"
+  "10.0.1.41": "Gt2^WmXz#KpL9y"
+  "10.0.1.42": "Mf4!XgNr^YqTzb"
+  "10.0.1.43": "Kx7*LpWq#ZNvF"
+  "10.0.1.44": "Tp5$YvN!KgLmXr"
